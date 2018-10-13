@@ -23,8 +23,9 @@ module.exports = {
       name: 'Boardgame Jerk',
       email: 'chris@gregariousmammal.com',
       telegram: 'https://t.me/BoardGameJerkBot',
-      twitter: 'http://twitter.com/boardgamejerk',
-      github: '#'
+      twitter: 'https://twitter.com/boardgamejerk',
+      facebook: 'https://m.me/boardgamejerk',
+      github: 'https://gitlab.com/ChrisChinchilla/boardgamejerk'
     }
   },
   plugins: [

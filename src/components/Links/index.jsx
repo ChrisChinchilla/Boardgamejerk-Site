@@ -8,6 +8,7 @@ class Links extends React.Component {
     const links = {
       telegram: author.telegram,
       twitter: author.twitter,
+      facebook: author.facebook,
       github: author.github,
       email: author.email
     };
@@ -16,18 +17,18 @@ class Links extends React.Component {
       <div className="links">
         <ul className="links__list">
           <li className="links__list-item">
-            <a href={`https://www.twitter.com/${links.twitter}`} target="_blank" >
+            <a href={`${links.twitter}`} target="_blank" >
               <i className="icon-twitter" />
             </a>
           </li>
           <li className="links__list-item">
-            <a href={`https://www.github.com/${links.github}`} target="_blank" >
+            <a href={`${links.github}`} target="_blank" >
               <i className="icon-github" />
             </a>
           </li>
           <li className="links__list-item">
-            <a href={`https://www.vk.com/${links.vk}`} target="_blank" >
-              <i className="icon-vkontakte" />
+            <a href={`${links.facebook}`} target="_blank" >
+              <i className="icon-facebook" />
             </a>
           </li>
         </ul>
@@ -38,7 +39,7 @@ class Links extends React.Component {
             </a>
           </li>
           <li className="links__list-item">
-            <a href={`telegram:${links.telegram}`}>
+            <a href={`${links.telegram}`}>
               <i className="icon-paper-plane" />
             </a>
           </li>
