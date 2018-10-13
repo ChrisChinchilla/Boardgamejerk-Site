@@ -7,10 +7,10 @@ class IndexRoute extends React.Component {
   render() {
     const items = [];
     const { title, subtitle } = this.props.data.site.siteMetadata;
-    // const posts = this.props.data.allMarkdownRemark.edges;
-    // posts.forEach((post) => {
-    //   items.push(<Post data={post} key={post.node.fields.slug} />);
-    // });
+    const posts = this.props.data.allMarkdownRemark.edges;
+    posts.forEach((post) => {
+      items.push(<Post data={post} key={post.node.fields.slug} />);
+    });
 
     return (
       <div>
@@ -48,8 +48,6 @@ export const pageQuery = graphql`
           telegram
           twitter
           github
-          rss
-          vk
         }
       }
     }
