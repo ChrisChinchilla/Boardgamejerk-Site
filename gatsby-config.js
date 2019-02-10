@@ -11,10 +11,10 @@ module.exports = {
       //   label: 'Articles',
       //   path: '/'
       // },
-      // {
-      //   label: 'About',
-      //   path: '/about/',
-      // },
+      {
+        label: 'About',
+        path: '/about/',
+      },
       // {
       //   label: 'Contact',
       //   path: '/contact/',
