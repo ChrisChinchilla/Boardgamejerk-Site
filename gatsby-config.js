@@ -2,22 +2,23 @@ module.exports = {
   siteMetadata: {
     url: 'https://boardgamejerk.com',
     title: 'Boardgame Jerk',
-    subtitle: 'A bot for random boardgame ideas, whever you consume your bots, and at the gaming table.',
-    copyright: '© Gregarious Mammal',
+    subtitle:
+      'A bot for random boardgame ideas, whereever you consume your bots, and at the gaming table.',
+    copyright: '© Chris Chinchilla',
     disqusShortname: '',
     menu: [
       // {
       //   label: 'Articles',
       //   path: '/'
       // },
-      {
-        label: 'About',
-        path: '/about/'
-      },
-      {
-        label: 'Contact',
-        path: '/contact/'
-      }
+      // {
+      //   label: 'About',
+      //   path: '/about/',
+      // },
+      // {
+      //   label: 'Contact',
+      //   path: '/contact/',
+      // },
     ],
     author: {
       name: 'Boardgame Jerk',
@@ -25,16 +26,16 @@ module.exports = {
       telegram: 'https://t.me/BoardGameJerkBot',
       twitter: 'https://twitter.com/boardgamejerk',
       facebook: 'https://m.me/boardgamejerk',
-      github: 'https://gitlab.com/ChrisChinchilla/boardgamejerk'
-    }
+      github: 'https://gitlab.com/ChrisChinchilla/boardgamejerk',
+    },
   },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+        name: 'pages',
+      },
     },
     {
       resolve: 'gatsby-plugin-feed',
@@ -49,8 +50,8 @@ module.exports = {
               }
             }
           }
-        `
-      }
+        `,
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -59,30 +60,30 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 960
-            }
+              maxWidth: 960,
+            },
           },
           {
             resolve: 'gatsby-remark-responsive-iframe',
-            options: { wrapperStyle: 'margin-bottom: 1.0725rem' }
+            options: { wrapperStyle: 'margin-bottom: 1.0725rem' },
           },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants'
-        ]
-      }
+          'gatsby-remark-smartypants',
+        ],
+      },
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
-      options: { trackingId: 'UA-73379983-2' }
+      options: { trackingId: 'UA-73379983-2' },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`roboto\:400,400i,500,700`]
-      }
+        fonts: [`roboto\:400,400i,500,700`],
+      },
     },
     {
       resolve: 'gatsby-plugin-sitemap',
@@ -108,18 +109,18 @@ module.exports = {
           }`,
         output: '/sitemap.xml',
         serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map((edge) => {
+          allSitePage.edges.map(edge => {
             return {
               url: site.siteMetadata.url + edge.node.path,
               changefreq: 'daily',
-              priority: 0.7
-            };
-          })
-      }
+              priority: 0.7,
+            }
+          }),
+      },
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-postcss-sass'
-  ]
-};
+    'gatsby-plugin-postcss-sass',
+  ],
+}
