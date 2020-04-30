@@ -19,7 +19,15 @@
 	<header id="header">
 		<div class="inner">
 			<a href="#" class="image avatar"><img src="images/nikkidido.jpg" alt="" /></a>
-			<h1>A bot for random boardgame ideas, whereever you consume your bots, and at the gaming table.</h1>
+			<h1>A bot for random boardgame ideas, where ever you consume your bots, and at the gaming table.</h1>
+			<ul class="icons">
+				<li><a href="https://twitter.com/boardgamejerk" class="icon brands fa-twitter"><span
+							class="label">Twitter</span></a></li>
+				<li><a href="https://github.com/ChrisChinchilla/boardgamejerk" class="icon brands fa-github"><span
+							class="label">Github</span></a></li>
+				<li><a href="mailto:chris@chrischinchilla.com" class="icon solid fa-envelope"><span
+							class="label">Email</span></a></li>
+			</ul>
 		</div>
 	</header>
 
@@ -37,6 +45,8 @@
 					href="https://t.me/boardgamejerk">Telegram</a>, <a href="m.me/boardgamejerk">Facebook Messenger</a>
 				and <a href="https://slack.com/oauth/authorize?client_id=2250313125.512817079200&scope=bot">Slack</a>.
 			</p>
+			<p>And then you can enjoy witty statements like:</p>
+			<div id="genText"></div>
 		</section>
 
 
@@ -45,25 +55,24 @@
 
 	<!-- Footer -->
 	<footer id="footer">
-		<div class="inner">
-			<ul class="icons">
-				<li><a href="https://twitter.com/boardgamejerk" class="icon brands fa-twitter"><span
-							class="label">Twitter</span></a></li>
-				<li><a href="https://github.com/ChrisChinchilla/boardgamejerk" class="icon brands fa-github"><span
-							class="label">Github</span></a></li>
-				<li><a href="mailto:chris@chrischinchilla.com" class="icon solid fa-envelope"><span
-							class="label">Email</span></a></li>
-			</ul>
-		</div>
+
 	</footer>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
+	<!-- <script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.poptrox.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="assets/js/main.js"></script> -->
+	<script>
+		window.onload = async () => {
+			const response = await fetch('http://localhost:8000');
+			const myJson = await response.json(); 
+			console.log(myJson.message);
+			document.getElementById('genText').textContent = myJson.message;
+		}
+	</script>
 
 </body>
 
