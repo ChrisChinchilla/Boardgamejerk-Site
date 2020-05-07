@@ -67,7 +67,7 @@
 	<script src="assets/js/main.js"></script> -->
 	<script>
 		window.onload = async () => {
-			const response = await fetch('http://localhost:8000');
+			const response = await fetch('https://bgj-api.herokuapp.com');
 			const myJson = await response.json(); 
 			console.log(myJson.message);
 			document.getElementById('genText').textContent = myJson.message;
